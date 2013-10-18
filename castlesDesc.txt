@@ -8,4 +8,5 @@ castles in the sky is to operate on:
  we must take into account live updating in a single thread rolled over manner
 the system does not have periodic bounds (this would look trippy in 3d space (maybe a later feature))
   the graphics function should be connected to the actual system, so an update cycle both places/removes graphics from the buffer and updates the internal congfig (assuming that poling the graphics system is less effiecent than storing the items in a list somewhere...
-  
+  Current build: Display.js is obsoloete; RenderEngine has replaced it; based ona better programmers code base
+  thinking of starting with mouse rolled scene then maybe going camera control

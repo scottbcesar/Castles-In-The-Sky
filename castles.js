@@ -2,7 +2,7 @@ engine={};
 
 //this step is meant to run from start to finish updating the system according to rulesets
 //key values 
-ruleSet = function(cellState, neighbors){
+engine.ruleSet = function(cellState, neighbors){
 	switch(neighbors){
 	case 0:
 	case 1:
@@ -32,11 +32,7 @@ engine.computeStep = function(){
 	for(var i=0; i<dim; i++){
 		for(var j=0; j<dim; j++){
 			for(var k=0; k<dim; k++){
-				if(engine.core[i][j][k]){
-				
-				}
-				else{
-				}
+				engine.core[i][j][k]=engine.ruleSet(engine.core[i][j][k],engine.neighbors(engine.core[i][j][k]));
 			}
 		}
 	}
@@ -52,7 +48,7 @@ engine.init = function(dim){
 			engine.core[i][j] = new Array();
 			engine.processed[i][j] = new Array();
 			for(var k=0; k<dim; k++){
-				engine.core[i][j][k] = true;
+				engine.core[i][j][k] = 0;
 			}
 		}
 	} 
@@ -73,4 +69,5 @@ engine.neighbors = function(x,y,z,k){
 			}
 		}
 	}
+	return total;
 }
