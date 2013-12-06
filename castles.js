@@ -39,8 +39,8 @@ engine.computeStep = function(){
 }
 
 engine.init = function(dim){
-	var engine.core = new Array();
-	var engine.processed = new Array();
+	core = new Array();
+	processed = new Array();
 	for(var i=0; i<dim; i++){
 		engine.core[i] = new Array();
 		engine.processed[i] = new Array();

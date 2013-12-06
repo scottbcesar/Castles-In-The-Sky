@@ -1,5 +1,5 @@
 var gl = Gl.create();
-
+var cubeStack;
 window.onload = function(){
 	function onresize(){
 		gl.canvas.width = window.innerWidth;
@@ -30,8 +30,10 @@ window.onload = function(){
       draw();
     }
     prevTime = nextTime;
+	
     requestAnimationFrame(animate);
   }
+  
   requestAnimationFrame(animate);
 
   window.onresize = onresize;
