@@ -32,8 +32,8 @@ var load = function(){
 	};
 	*/
 	init(12,12,f);
-	r.live = primes[2];
-	r.stay = primes[3];
+	r.live = primes[3]*primes[2];
+	r.stay = primes[4];
 	
 	
 	
@@ -102,7 +102,9 @@ var render = function(){
 			}
 		
 			frames.push(step2d(state2d , r));
+			frames.reverse();
 			frames.pop();
+			frames.reverse();
 			
 			for(var i =0 ; i<12; i++){
 				for(var j=0; j<width; j++){

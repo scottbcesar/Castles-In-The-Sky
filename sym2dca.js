@@ -58,7 +58,7 @@ var step2d = function(state, rule){
 	var deltaD = new Array();
 	for (var i=0; i< state.length; i++){
 		for (var j=0; j< state[0].length; j++){
-			var k = neighbors2d(state, j, i);
+			var k = neighbors2dp(state, j, i);
 			if (rule.live%primes[k] ==0){
 				deltaL.push(new Array(j,i));
 			}
@@ -76,10 +76,19 @@ var step2d = function(state, rule){
 	for (var i=0; i<deltaD.length; i++){
 		state2d[(deltaD[i])[1]][(deltaD[i])[0]] = 0;
 	}
+	/*
 	delta = {};
 	delta.L= deltaL;
 	delta.D= deltaD;
-	return state2d;
+	*/
+	var a = new Array();
+	for (var i=0; i< state.length; i++){
+		a.push(new Array());
+		for (var j=0; j< state[0].length; j++){
+			a[i][j]=state2d[i][j];
+		}
+	}
+	return a;
 }
 
 //non periodic
